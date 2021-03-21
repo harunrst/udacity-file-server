@@ -32,6 +32,6 @@
     "jimp": "^0.16.1",
     "rimraf": "^3.0.2"
   },
-  "engines" : { "node" : ">=14" },
+  "engines" : { "node" : "14" },
   "engineStrict" : true
 }
