@@ -14,12 +14,17 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   app.use(bodyParser.json());
 
   //Filter image endpoint
-  app.get( "/filteredimage", async ( req, res ) => {
+  app.get( "/filteredimage", async ( req:express.Request, res:express.Response ) => {
     const imageUrl = req.query.image_url;
-    await filterImageFromURL(imageUrl).then(result=>{
-      res.sendFile(result);
-      res.on("finish", ()=> deleteLocalFiles([result]))
-    })
+    if(!!imageUrl)
+    {
+      await filterImageFromURL(imageUrl).then(result=>{
+        res.sendFile(result);
+        res.on("finish", ()=> deleteLocalFiles([result]))
+      })
+    }
+    else
+      res.status(400).send("You should send a valid image URL.")
   } );
   
   // Root Endpoint
