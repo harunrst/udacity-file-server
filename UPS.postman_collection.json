@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "5a6101e2-0366-40cb-85aa-e57a7724f0af",
+		"name": "UPS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UPS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "transId",
+						"value": "93431F",
+						"type": "text"
+					},
+					{
+						"key": "AccessLicenseNumber",
+						"value": "7D8C7A1831ECE752",
+						"type": "text"
+					},
+					{
+						"key": "transactionSrc",
+						"value": "Navlungo",
+						"type": "text"
+					},
+					{
+						"key": "Username",
+						"value": "NAVLUNGO",
+						"type": "text"
+					},
+					{
+						"key": "Password",
+						"value": "Gurhanups123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"RateRequest\":{\n\"Request\":{\n\"SubVersion\":\"1801\",\n\"TransactionReference\":{\n\"CustomerContext\":\" \"\n}\n},\n\"Shipment\":{\n\"ShipmentRatingOptions\":{\n\"NegotiatedRatesIndicator\":\" \"\n},\n\"Shipper\":{\n\"Name\":\"Billy Blanks\",\n\"ShipperNumber\":\"93431F\",\n\"Address\":{\n\"AddressLine\":\"366 Robin LN SE\",\n\"City\":\"Ankara\",\n\"StateProvinceCode\":\"GA\",\n\"PostalCode\":\"34912\",\n\"CountryCode\":\"TR\"\n}\n},\n\"ShipTo\":{\n\"Name\":\"Sarita Lynn\",\n\"Address\":{\n\"AddressLine\":\"355 West San Fernando Street\",\n\"City\":\"Berlin\",\n\"StateProvinceCode\":\"BE\",\n\"PostalCode\":\"10117\",\n\"CountryCode\":\"DE\"\n}\n},\n\"ShipFrom\":{\n\"Name\":\"Billy Blanks\",\n\"Address\":{\n\"AddressLine\":\"366 Robin LN SE\",\n\"City\":\"Ankara\",\n\"StateProvinceCode\":\"GA\",\n\"PostalCode\":\"34912\",\n\"CountryCode\":\"TR\"\n}\n},\n\"Service\":{\n\"Code\":\"65\",\n\"Description\":\"Saver\"\n},\n\"ShipmentTotalWeight\":{\n\"UnitOfMeasurement\":{\n\"Code\":\"KGS\",\n\"Description\":\"kilograms\"\n},\n\"Weight\":\"10\"},\n\"Package\":{\n\"PackagingType\":{\n\"Code\":\"02\",\n\"Description\":\"Package\"\n},\n\"Dimensions\":{\n\"UnitOfMeasurement\":{\n\"Code\":\"CM\"\n},\n\"Length\":\"10\",\n\"Width\":\"7\",\n\"Height\":\"5\"\n},\n\"PackageWeight\":{\n\"UnitOfMeasurement\":{\n\"Code\":\"KGS\"\n},\n\"Weight\":\"10\"\n}\n}\n}\n}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wwwcie.ups.com/ship/v1/rating/Rate",
+					"protocol": "https",
+					"host": [
+						"wwwcie",
+						"ups",
+						"com"
+					],
+					"path": [
+						"ship",
+						"v1",
+						"rating",
+						"Rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPS Shipping",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "transId",
+						"value": "93431F",
+						"type": "text"
+					},
+					{
+						"key": "AccessLicenseNumber",
+						"value": "7D8C7A1831ECE752",
+						"type": "text"
+					},
+					{
+						"key": "transactionSrc",
+						"value": "Navlungo",
+						"type": "text"
+					},
+					{
+						"key": "Username",
+						"value": "NAVLUNGO",
+						"type": "text"
+					},
+					{
+						"key": "Password",
+						"value": "Gurhanups123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ShipmentRequest\": {\n    \"Shipment\": {\n        \"ShipmentServiceOptions\": {\n              \"InternationalForms\":{\n                  \"FormType\":\"01\",\n                  \"InvoiceDate\":\"20201217\",\n                  \"ReasonForExport\":\"GIFT\",\n                  \"CurrencyCode\":\"EUR\",\n                  \"Product\":[\n                      {\n                        \"Description\": [\"Lorem Ipsum, dizgi ve baskı endüstr\",\"isinde kullanılan mıgır metinlerdir\",\". Lorem Ipsum, adı bilinmeyen bir \"],\n                        \"Unit\":{\n                            \"Number\":\"1\",\n                            \"UnitOfMeasurement\":{\n                                \"Code\":\"PC\"\n                            },\n                            \"Value\":\"2\"\n                        },\n                        \"OriginCountryCode\":\"TR\"\n                  }\n                  ],\n                  \"Contacts\":{\n                      \"SoldTo\":{\n                          \"Name\": \"Renee\",\n                          \"AttentionName\": \"Renee J Walsh\",\n                          \"Phone\": {\n                          \t\"Number\": \"1111111111\"\n                           },\n                          \"Address\": {\n                            \"AddressLine\": \"Bryce Coreno, 1680 Zahns Corner Rd\",\n                            \"City\": \"Piketon\",\n                            \"StateProvinceCode\":\"\",\n                            \"PostalCode\": \"45661\",\n                            \"CountryCode\": \"DE\"\n                           }\n                      }\n                  }\n              }\n          },\n        \"ShipmentRatingOptions\":{\n            \"NegotiatedRatesIndicator\":\"1\"\n        },\n      \"Description\": \"1206 PTR\",\n      \"Shipper\": {\n        \"ShipperNumber\": \"93431F\",\n        \"Name\": \"Bahattin Altay\",\n        \"AttentionName\": \"Bahattin Altay\",\n        \"Phone\": {\n          \"Number\": \"5458678904\"\n        },\n        \"TaxIdentificationNumber\": \"234234234\",\n        \"Address\": {\n          \"AddressLine\": [\"ahhahasgdhsag hh\",\"asdadasasdadasasdadasasdadas\"],\n          \"City\": \"Istanbul\",\n          \"PostalCode\": \"34480\",\n          \"CountryCode\": \"TR\"\n        }\n      },\n       \"PaymentInformation\": {\n        \"ShipmentCharge\": {\n          \"Type\": \"01\",\n          \"BillShipper\": {\n            \"AccountNumber\": \"93431F\"\n          }\n        }\n      },\n      \"ShipTo\": {\n        \"Name\": \"Renee\",\n        \"AttentionName\": \"Renee J Walsh\",\n        \"Phone\": {\n        \t\"Number\": \"1111111111\"\n         },\n        \"Address\": {\n          \"AddressLine\": \"Bryce Coreno, 1680 Zahns Corner Rd\",\n          \"City\": \"New York\",\n          \"StateProvinceCode\":\"NY\",\n          \"PostalCode\": \"10001\",\n          \"CountryCode\": \"US\"\n        }\n      },\n      \"Package\": [\n        {  \n          \"Description\": \"International Goods\",\n          \"Packaging\": {\n            \"Code\": \"01\"\n          },\n          \"PackageWeight\":{\n\t\t\t\"UnitOfMeasurement\":{\n\t\t\t\t\"Code\":\"KGS\"\n\t\t\t},\n\t\t\t\"Weight\":\"0.15\"\n\t\t\t}\n        }\n      ],\n      \"Service\": {\n        \"Code\": \"65\"\n      }\n\t}     \n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wwwcie.ups.com/ship/v1/shipments?additionaladdressvalidation=city",
+					"protocol": "https",
+					"host": [
+						"wwwcie",
+						"ups",
+						"com"
+					],
+					"path": [
+						"ship",
+						"v1",
+						"shipments"
+					],
+					"query": [
+						{
+							"key": "additionaladdressvalidation",
+							"value": "city"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
